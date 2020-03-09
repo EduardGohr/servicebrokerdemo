@@ -1,0 +1,38 @@
+<server description="new server">
+
+	<!-- Enable features -->
+	<featureManager>
+		<feature>webProfile-8.0</feature>
+		<feature>jpa-2.2</feature>
+		<feature>mpJwt-1.1</feature>
+	</featureManager>
+
+	<httpEndpoint httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint" host="*"/>
+
+	<logging consoleLogLevel="INFO" copySystemStreams="true" traceFormat="ENHANCED" traceSpecification="*=info:com.ibm.iot.*=all:com.ibm.ws.jaxrs.*=all"/>
+<!-- 	<keyStore id="defaultKeyStore" password="keyspass"/> 
+	<keyStore id="defaultKeyStore" password="keyspass" location="/opt/ibm/wlp/output/defaultServer/resources/security/globalkeys.jks"/>
+	<mpJwt
+	     id="splicex"
+	     jwksUri="${env.SPLICEX_OIDC_JWKSURI}"
+	     issuer="${env.SPLICEX_OIDC_ISSUER}"
+	     userNameAttribute="sub"
+	     groupNameAttribute="groupIds"
+	     audiences="${env.SPLICEX_OIDC_CLIENT_IDENT}">
+	</mpJwt>
+
+    <library id="MARIADBLIB">
+        <fileset dir="${server.config.dir}" includes="mariadb-java-client-2.2.1.jar"/>
+    </library>
+    <dataSource id="SPLICEXTEXTDB" jndiName="jdbc/splicextextdb" validationTimeout="0">
+        <jdbcDriver libraryRef="MARIADBLIB"/>
+        <properties
+        	databaseName="${env.DB_TRANSLATION_NAME}"
+        	password="${env.DB_TRANSLATION_PASS}"
+        	portNumber="${env.DB_TRANSLATION_PORT}"
+        	serverName="${env.DB_TRANSLATION_HOST}"
+        	user="${env.DB_TRANSLATION_USER}"/>
+    </dataSource>
+-->
+    <applicationMonitor updateTrigger="mbean"/>
+</server>
